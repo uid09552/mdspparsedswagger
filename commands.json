@@ -1,0 +1,81 @@
+{
+    "Get":[
+        {
+            "nested":[
+                {
+                    "basePath":"/api/assetmanagement/v3/assettypes",
+                    "id":"assettypes",
+                    "parameters":["size","page","sort","exploded"],
+                    "variables":[],
+                    "description":"returns assettypes, use --help for more details"
+
+                },
+                {
+                    "basePath":"/api/assetmanagement/v3/assets",
+                    "version":"v3",
+                    "id":"assets",
+                    "parameters":["size","page","sort","exploded"],
+                    "variables":[],
+                    "description":"returns assets, use --help for more details"
+                }
+            ],
+            "basePath":"assetmanagement",
+            "alias":"assetmanagement",
+            "id":"asm",
+            "description":"assetmanagement"
+    },
+    {
+        "basePath":"iam",
+        "id":"iam",
+        "description":"iam",
+        "nested":[
+            {
+                "basePath":"/api/identitymanagement/v3/Users",
+                "id":"Users",
+                "parameters":[],
+                "variables":[],
+                "description":"returns Users, use --help for more details"
+
+            },
+            {
+                "basePath":"/api/identitymanagement/v3/Users",
+                "id":"Groups",
+                "parameters":[],
+                "variables":[],
+                "description":"returns Groups, use --help for more details"
+            }
+        ]
+    },
+    {
+        "basePath":"iotfile",
+        "id":"iotfile",
+        "description":"The IoT File API enables storing and retrieving files for entity instances.",
+        "nested":[
+            {
+                "basePath":"/api/iotfile/v3/files/{entityId}/{filepath}",
+                "id":"files",
+                "parameters":[],
+                "variables":["entityId","filepath"],
+                "description":"returns files for specific entityId"
+
+            }
+        ]
+    },
+    {
+        "basePath":"iottimeseries",
+        "id":"iottm",
+        "alias":"iottimeseries",
+        "description":"Store and query time series data with a precision of 1 millisecond.",
+        "nested":[
+            {
+                "basePath":"/api/iottimeseries/v3/timeseries/{entityId}/{propertysetname}",
+                "id":"files",
+                "parameters":[],
+                "variables":["entityId","propertysetname"],
+                "description":"Read time series data for a single entity and propertyset. Returns data for a specified time range. Returns the latest value if no range is provided."
+
+            }
+        ]
+    }
+]
+}
