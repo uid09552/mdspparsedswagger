@@ -1,81 +1,1878 @@
 {
-    "Get":[
+  "Post": [
+    {
+      "basePath": "signalvalidation",
+      "alias": "signalvalidation",
+      "id": "sgv",
+      "description": "Signal Validation API",
+      "nested": [
         {
-            "nested":[
-                {
-                    "basePath":"/api/assetmanagement/v3/assettypes",
-                    "id":"assettypes",
-                    "parameters":["size","page","sort","exploded"],
-                    "variables":[],
-                    "description":"returns assettypes, use --help for more details"
-
-                },
-                {
-                    "basePath":"/api/assetmanagement/v3/assets",
-                    "version":"v3",
-                    "id":"assets",
-                    "parameters":["size","page","sort","exploded"],
-                    "variables":[],
-                    "description":"returns assets, use --help for more details"
-                }
-            ],
-            "basePath":"assetmanagement",
-            "alias":"assetmanagement",
-            "id":"asm",
-            "description":"assetmanagement"
+          "basePath": "/api/signalvalidation/v3/detectrangeviolations",
+          "version": "v3",
+          "id": "range-violations",
+          "parameters": [],
+          "variables": [],
+          "description": "Launches range check task. Use --help for more details"
+        },
+        {
+          "basePath": "/api/signalvalidation/v3/detectspikes",
+          "version": "v3",
+          "id": "spikes",
+          "parameters": [],
+          "variables": [],
+          "description": "Finds spike alerts. Use --help for more details"
+        },
+        {
+          "basePath": "/api/signalvalidation/v3/detectnoise",
+          "version": "v3",
+          "id": "noise",
+          "parameters": [],
+          "variables": [],
+          "description": "Detect Noise. Use --help for more details"
+        },
+        {
+          "basePath": "/api/signalvalidation/v3/detectjumps",
+          "version": "v3",
+          "id": "jumps",
+          "parameters": [],
+          "variables": [],
+          "description": "Finds jump alerts. Use --help for more details"
+        },
+        {
+          "basePath": "/api/signalvalidation/v3/detectgaps",
+          "version": "v3",
+          "id": "gaps",
+          "parameters": [],
+          "variables": [],
+          "description": "Launches data gap analysis task. Use --help for more details"
+        },
+        {
+          "basePath": "/api/signalvalidation/v3/detectgapsandinterpolate",
+          "version": "v3",
+          "id": "gaps-interpolate",
+          "parameters": [],
+          "variables": [],
+          "description": "Launches data gap analysis task with interpolation. Use --help for more details"
+        },
+        {
+          "basePath": "/api/signalvalidation/v3/detectbias",
+          "version": "v3",
+          "id": "bias",
+          "parameters": [],
+          "variables": [],
+          "description": "Finds bias alerts. Use --help for more details"
+        }
+      ]
     },
     {
-        "basePath":"iam",
-        "id":"iam",
-        "description":"iam",
-        "nested":[
-            {
-                "basePath":"/api/identitymanagement/v3/Users",
-                "id":"Users",
-                "parameters":[],
-                "variables":[],
-                "description":"returns Users, use --help for more details"
-
-            },
-            {
-                "basePath":"/api/identitymanagement/v3/Users",
-                "id":"Groups",
-                "parameters":[],
-                "variables":[],
-                "description":"returns Groups, use --help for more details"
-            }
-        ]
+      "basePath": "eventanalytics",
+      "alias": "eventanalytics",
+      "id": "eva",
+      "description": "Event Analytics API",
+      "nested": [
+        {
+          "basePath": "/api/eventanalytics/v3/findTopEvents",
+          "version": "v3",
+          "id": "find-top",
+          "parameters": [
+            "TopEventsBody"
+          ],
+          "variables": [],
+          "description": "Find most frequent top N events. Use --help for more details"
+        },
+        {
+          "basePath": "/api/eventanalytics/v3/filterEvents",
+          "version": "v3",
+          "id": "filter",
+          "parameters": [
+            "EventSearchBody"
+          ],
+          "variables": [],
+          "description": "Simplifies the dataset to the most meaningful data. Use --help for more details"
+        },
+        {
+          "basePath": "/api/eventanalytics/v3/countEvents",
+          "version": "v3",
+          "id": "count",
+          "parameters": [
+            "EventCountBody"
+          ],
+          "variables": [],
+          "description": "Determines the number of events for a required time resolution. Use --help for more details"
+        },
+        {
+          "basePath": "/api/eventanalytics/v3/removeDuplicateEvents",
+          "version": "v3",
+          "id": "remove-duplicate",
+          "parameters": [
+            "DuplicateEventsRemovalBody"
+          ],
+          "variables": [],
+          "description": "Removes the duplicate events. Use --help for more details"
+        },
+        {
+          "basePath": "/api/eventanalytics/v3/matchEventPatterns",
+          "version": "v3",
+          "id": "match-pattern",
+          "parameters": [
+            "PatternMatchingBody"
+          ],
+          "variables": [],
+          "description": "Applies the patterns specified in body on a list of events. Use --help for more details"
+        }
+      ]
     },
     {
-        "basePath":"iotfile",
-        "id":"iotfile",
-        "description":"The IoT File API enables storing and retrieving files for entity instances.",
-        "nested":[
-            {
-                "basePath":"/api/iotfile/v3/files/{entityId}/{filepath}",
-                "id":"files",
-                "parameters":[],
-                "variables":["entityId","filepath"],
-                "description":"returns files for specific entityId"
-
-            }
-        ]
+      "basePath": "usagetransparency",
+      "alias": "usagetransparency",
+      "id": "use",
+      "description": "Usage Transparency API",
+      "nested": [
+        {
+          "basePath": "/api/usagetransparency/v3/usages",
+          "version": "v3",
+          "id": "usages",
+          "parameters": [],
+          "variables": [],
+          "description": "Send application specific usage data to UTS backend. Use --help for more details"
+        }
+      ]
     },
     {
-        "basePath":"iottimeseries",
-        "id":"iottm",
-        "alias":"iottimeseries",
-        "description":"Store and query time series data with a precision of 1 millisecond.",
-        "nested":[
-            {
-                "basePath":"/api/iottimeseries/v3/timeseries/{entityId}/{propertysetname}",
-                "id":"files",
-                "parameters":[],
-                "variables":["entityId","propertysetname"],
-                "description":"Read time series data for a single entity and propertyset. Returns data for a specified time range. Returns the latest value if no range is provided."
-
-            }
-        ]
+      "basePath": "agentmanagement",
+      "alias": "agentmanagement",
+      "id": "agm",
+      "description": "Agent Management API",
+      "nested": [
+        {
+          "basePath": "/api/agentmanagement/v3/agents",
+          "version": "v3",
+          "id": "agents",
+          "parameters": [],
+          "variables": [],
+          "description": "Create agent. Use --help for more details"
+        },
+        {
+          "basePath": "/api/agentmanagement/v3/agents/{id}/boarding/offboard",
+          "version": "v3",
+          "id": "offboard",
+          "parameters": [],
+          "variables": [
+            "id"
+          ],
+          "description": "Offboard agent. Use --help for more details"
+        },
+        {
+          "basePath": "/api/agentmanagement/v3/register",
+          "version": "v3",
+          "id": "register",
+          "parameters": [],
+          "variables": [],
+          "description": "Register client. Use --help for more details"
+        },
+        {
+          "basePath": "/api/agentmanagement/v3/oauth/token",
+          "version": "v3",
+          "id": "oauth-token",
+          "parameters": [],
+          "variables": [],
+          "description": "Grant an Access Token. Use --help for more details"
+        }
+      ]
+    },
+    {
+      "basePath": "dataflowengine",
+      "alias": "dataflowengine",
+      "id": "dfe",
+      "description": "Data Flow Engine API",
+      "nested": [
+        {
+          "basePath": "/api/dataflowengine/v3/streams/definitions",
+          "version": "v3",
+          "id": "def-streams",
+          "parameters": [],
+          "variables": [],
+          "description": "Define and deploy a new stream. Use --help for more details"
+        },
+        {
+          "basePath": "/api/dataflowengine/v3/streams/deployments/{streamName}",
+          "version": "v3",
+          "id": "dep-stream",
+          "parameters": [],
+          "variables": [
+            "streamName"
+          ],
+          "description": "Deploy a stream by stream name. Use --help for more details"
+        }
+      ]
+    },
+    {
+      "basePath": "notification",
+      "alias": "notification",
+      "id": "nfc",
+      "description": "Notification API",
+      "nested": [
+        {
+          "basePath": "/api/notification/v3/audit/searchauditstatus",
+          "version": "v3",
+          "id": "audit-status",
+          "parameters": [],
+          "variables": [],
+          "description": "search the audit status from Database. Use --help for more details"
+        },
+        {
+          "basePath": "/api/notification/v3/communicationcategories/",
+          "version": "v3",
+          "id": "cats",
+          "parameters": [],
+          "variables": [],
+          "description": "Creating communication category. Use --help for more details"
+        },
+        {
+          "basePath": "/api/notification/v3/communicationcategories/unsubscribe/recipients",
+          "version": "v3",
+          "id": "unsubscribe-recipients",
+          "parameters": [],
+          "variables": [],
+          "description": "Unsubscribe the recipients from category. Use --help for more details"
+        },
+        {
+          "basePath": "/api/notification/v3/recipient/",
+          "version": "v3",
+          "id": "recipient",
+          "parameters": [],
+          "variables": [],
+          "description": "Create a recipient. Use --help for more details"
+        },
+        {
+          "basePath": "/api/notification/v3/recipient/search",
+          "version": "v3",
+          "id": "recipient-search",
+          "parameters": [],
+          "variables": [],
+          "description": "Search a recipient. Use --help for more details"
+        },
+        {
+          "basePath": "/api/notification/v3/template/",
+          "version": "v3",
+          "id": "template",
+          "parameters": [],
+          "variables": [],
+          "description": "Use this api to create templates for a new template set using templateFiles and templateInfo. Use --help for more details"
+        },
+        {
+          "basePath": "/api/notification/v3/publisher/messages",
+          "version": "v3",
+          "id": "publisher-messages",
+          "parameters": [],
+          "variables": [],
+          "description": "Publishes the JSON String message to Queue. Use --help for more details"
+        },
+        {
+          "basePath": "/api/notification/v3/certificatestore/",
+          "version": "v3",
+          "id": "cert-store",
+          "parameters": [],
+          "variables": [],
+          "description": "To Upload a valid recipient's public certificate into DB. Use --help for more details"
+        },
+        {
+          "basePath": "/api/notification/v3/recipient/recipientgroup",
+          "version": "v3",
+          "id": "recipient-group",
+          "parameters": [],
+          "variables": [],
+          "description": "Create a recipient group. Use --help for more details"
+        },
+        {
+          "basePath": "/api/notification/v3/recipient/recipientgroup/search",
+          "version": "v3",
+          "id": "recipient-group-search",
+          "parameters": [],
+          "variables": [],
+          "description": "Search Recipient Group. Use --help for more details"
+        }
+      ]
+    },
+    {
+      "basePath": "modelmanagement",
+      "alias": "modelmanagement",
+      "id": "mmg",
+      "description": "Model Management API",
+      "nested": [
+        {
+          "basePath": "/api/modelmanagement/v3/models",
+          "version": "v3",
+          "id": "models",
+          "parameters": [],
+          "variables": [],
+          "description": "Uploads a model payload and the corresponding metadata. Use --help for more details"
+        },
+        {
+          "basePath": "/api/modelmanagement/v3/models/{modelId}/versions",
+          "version": "v3",
+          "id": "model-version",
+          "parameters": [],
+          "variables": [
+            "modelId"
+          ],
+          "description": "Creates a new model version. Use --help for more details"
+        }
+      ]
+    },
+    {
+      "basePath": "dataexchange",
+      "alias": "dataexchange",
+      "id": "dex",
+      "description": "Data Exchange API",
+      "nested": [
+        {
+          "basePath": "/api/dataexchange/v3/files",
+          "version": "v3",
+          "id": "files",
+          "parameters": [],
+          "variables": [],
+          "description": "Performs a new file upload. Use --help for more details"
+        },
+        {
+          "basePath": "/api/dataexchange/v3/directories",
+          "version": "v3",
+          "id": "dirs",
+          "parameters": [],
+          "variables": [],
+          "description": "Creates a directory. Use --help for more details"
+        }
+      ]
+    },
+    {
+      "basePath": "identitymanagement",
+      "alias": "identitymanagement",
+      "id": "idm",
+      "description": "Identity Management API",
+      "nested": [
+        {
+          "basePath": "/api/identitymanagement/v3/Groups",
+          "version": "v3",
+          "id": "groups",
+          "parameters": [],
+          "variables": [],
+          "description": "Create group. Use --help for more details"
+        },
+        {
+          "basePath": "/api/identitymanagement/v3/Groups/{groupId}/members",
+          "version": "v3",
+          "id": "group-members",
+          "parameters": [],
+          "variables": [
+            "groupId"
+          ],
+          "description": "Add member to a group. Use --help for more details"
+        },
+        {
+          "basePath": "/api/identitymanagement/v3/Users",
+          "version": "v3",
+          "id": "users",
+          "parameters": [],
+          "variables": [],
+          "description": "Create user. Use --help for more details"
+        }
+      ]
+    },
+    {
+      "basePath": "anomalydetection",
+      "alias": "anomalydetection",
+      "id": "and",
+      "description": "Anomaly Detection API",
+      "nested": [
+        {
+          "basePath": "/api/anomalydetection/v3/detectanomalies",
+          "version": "v3",
+          "id": "detect-anomalies",
+          "parameters": [],
+          "variables": [],
+          "description": "Anomaly detection. Use --help for more details"
+        },
+        {
+          "basePath": "/api/anomalydetection/v3/models",
+          "version": "v3",
+          "id": "models",
+          "parameters": [],
+          "variables": [],
+          "description": "Train model. Use --help for more details"
+        }
+      ]
+    },
+    {
+      "basePath": "kpicalculation",
+      "alias": "kpicalculation",
+      "id": "kpi",
+      "description": "KPI Calculation API",
+      "nested": [
+        {
+          "basePath": "/api/kpicalculation/v3/computekpi",
+          "version": "v3",
+          "id": "compute",
+          "parameters": [],
+          "variables": [],
+          "description": "Computing KPIs. Use --help for more details"
+        },
+        {
+          "basePath": "/api/kpicalculation/v3/calculatekpistates",
+          "version": "v3",
+          "id": "calculate-states",
+          "parameters": [],
+          "variables": [],
+          "description": "Computing kpi states for the given sensor. Use --help for more details"
+        }
+      ]
+    },
+    {
+      "basePath": "mindconnect",
+      "alias": "mindconnect",
+      "id": "mdc",
+      "description": "MindConnect API",
+      "nested": [
+        {
+          "basePath": "/api/mindconnect/v3/dataPointMappings",
+          "version": "v3",
+          "id": "mappings",
+          "parameters": [],
+          "variables": [],
+          "description": "Create single mapping. Use --help for more details"
+        },
+        {
+          "basePath": "/api/mindconnect/v3/exchange",
+          "version": "v3",
+          "id": "exchange",
+          "parameters": [],
+          "variables": [],
+          "description": "Use --help for more details"
+        },
+        {
+          "basePath": "/api/mindconnect/v3/diagnosticActivations",
+          "version": "v3",
+          "id": "dia-activations",
+          "parameters": [],
+          "variables": [],
+          "description": "Create a new diagnostic activation. Use --help for more details"
+        }
+      ]
+    },
+    {
+      "basePath": "assetmanagement",
+      "alias": "assetmanagement",
+      "id": "asm",
+      "description": "Asset Management API",
+      "nested": [
+        {
+          "basePath": "/api/assetmanagement/v3/assets",
+          "version": "v3",
+          "id": "assets",
+          "parameters": [],
+          "variables": [],
+          "description": "Create an asset. Use --help for more details"
+        },
+        {
+          "basePath": "/api/assetmanagement/v3/assets/{id}/move",
+          "version": "v3",
+          "id": "move-asset",
+          "parameters": [
+            "ifMatchMandatory",
+            "UUID"
+          ],
+          "variables": [
+            "id"
+          ],
+          "description": "Move an asset. Use --help for more details"
+        },
+        {
+          "basePath": "/api/assetmanagement/v3/files",
+          "version": "v3",
+          "id": "meta-files",
+          "parameters": [],
+          "variables": [],
+          "description": "Upload files to be used in Asset Management. Use --help for more details"
+        }
+      ]
+    },
+    {
+      "basePath": "signalcalculation",
+      "alias": "signalcalculation",
+      "id": "sgc",
+      "description": "Signal Calculation API",
+      "nested": [
+        {
+          "basePath": "/api/signalcalculation/v3/applyOperation",
+          "version": "v3",
+          "id": "apply",
+          "parameters": [],
+          "variables": [],
+          "description": "Launches operation task. Use --help for more details"
+        }
+      ]
+    },
+    {
+      "basePath": "tenantmanagement",
+      "alias": "tenantmanagement",
+      "id": "tnm",
+      "description": "Tenant Management API",
+      "nested": [
+        {
+          "basePath": "/api/tenantmanagement/v4/subtenants",
+          "version": "v4",
+          "id": "subtenants",
+          "parameters": [],
+          "variables": [],
+          "description": "Create a subtenant. Use --help for more details"
+        },
+        {
+          "basePath": "/api/tenantmanagement/v4/legalConfigRegions",
+          "version": "v4",
+          "id": "legal-conf-regions",
+          "parameters": [],
+          "variables": [],
+          "description": "Creates tenant legal information. Use --help for more details"
+        }
+      ]
+    },
+    {
+      "basePath": "trendprediction",
+      "alias": "trendprediction",
+      "id": "trn",
+      "description": "Trend Prediction API",
+      "nested": [
+        {
+          "basePath": "/api/trendprediction/v3/train",
+          "version": "v3",
+          "id": "train",
+          "parameters": [
+            "trainBody"
+          ],
+          "variables": [],
+          "description": "Fits a regression model. Use --help for more details"
+        },
+        {
+          "basePath": "/api/trendprediction/v3/predict",
+          "version": "v3",
+          "id": "predict",
+          "parameters": [
+            "predictBody"
+          ],
+          "variables": [],
+          "description": "Predicts future values of a given output variable using a pre-trained regression model. Use --help for more details"
+        },
+        {
+          "basePath": "/api/trendprediction/v3/trainAndPredict",
+          "version": "v3",
+          "id": "train-predict",
+          "parameters": [
+            "trainPredictBody"
+          ],
+          "variables": [],
+          "description": "Fits a regression model and predicts future values of a given output variable using the trained regression model. Use --help for more details"
+        }
+      ]
+    },
+    {
+      "basePath": "eventmanagement",
+      "alias": "eventmanagement",
+      "id": "evn",
+      "description": "Event Management API",
+      "nested": [
+        {
+          "basePath": "/api/eventmanagement/v3/events",
+          "version": "v3",
+          "id": "events",
+          "parameters": [
+            "event"
+          ],
+          "variables": [],
+          "description": "Create new event. Use --help for more details"
+        },
+        {
+          "basePath": "/api/eventmanagement/v3/eventTypes",
+          "version": "v3",
+          "id": "event-types",
+          "parameters": [],
+          "variables": [],
+          "description": "Create new event type. Use --help for more details"
+        },
+        {
+          "basePath": "/api/eventmanagement/v3/deleteEventsJobs",
+          "version": "v3",
+          "id": "delete-event-job",
+          "parameters": [
+            "deleteEventsJob"
+          ],
+          "variables": [],
+          "description": "Create a delete events job. Use --help for more details"
+        },
+        {
+          "basePath": "/api/eventmanagement/v3/createEventsJobs",
+          "version": "v3",
+          "id": "create-event-job",
+          "parameters": [
+            "createEventsJob"
+          ],
+          "variables": [],
+          "description": "Create a create events job. Use --help for more details"
+        }
+      ]
     }
-]
+  ],
+  "Get": [
+    {
+      "basePath": "agentmanagement",
+      "alias": "agentmanagement",
+      "id": "agm",
+      "description": "Agent Management API",
+      "nested": [
+        {
+          "basePath": "/api/agentmanagement/v3/agents",
+          "version": "v3",
+          "id": "agents",
+          "parameters": [],
+          "variables": [],
+          "description": "Get agents. Use --help for more details"
+        },
+        {
+          "basePath": "/api/agentmanagement/v3/agents/{id}",
+          "version": "v3",
+          "id": "agent",
+          "parameters": [],
+          "variables": [
+            "id"
+          ],
+          "description": "Get agent. Use --help for more details"
+        },
+        {
+          "basePath": "/api/agentmanagement/v3/agents/{id}/status",
+          "version": "v3",
+          "id": "agent-status",
+          "parameters": [],
+          "variables": [
+            "id"
+          ],
+          "description": "Get online status. Use --help for more details"
+        },
+        {
+          "basePath": "/api/agentmanagement/v3/agents/{id}/boarding/configuration",
+          "version": "v3",
+          "id": "boarding-conf",
+          "parameters": [],
+          "variables": [
+            "id"
+          ],
+          "description": "Get boarding configuration. Use --help for more details"
+        },
+        {
+          "basePath": "/api/agentmanagement/v3/agents/{id}/boarding/status",
+          "version": "v3",
+          "id": "boarding-status",
+          "parameters": [],
+          "variables": [
+            "id"
+          ],
+          "description": "Get boarding status. Use --help for more details"
+        },
+        {
+          "basePath": "/api/agentmanagement/v3/agents/{id}/dataSourceConfiguration",
+          "version": "v3",
+          "id": "data-source-config",
+          "parameters": [],
+          "variables": [
+            "id"
+          ],
+          "description": "Get Data Source Configuration. Use --help for more details"
+        },
+        {
+          "basePath": "/api/agentmanagement/v3/oauth/token_key",
+          "version": "v3",
+          "id": "oauth-token-key",
+          "parameters": [],
+          "variables": [],
+          "description": "Provide key information of OAuth Server. Use --help for more details"
+        }
+      ]
+    },
+    {
+      "basePath": "iottimeseries",
+      "alias": "iottimeseries",
+      "id": "iot",
+      "description": "IoT Time Series API",
+      "nested": [
+        {
+          "basePath": "/api/iottimeseries/v3/timeseries/{entity}/{propertysetname}",
+          "version": "v3",
+          "id": "ts",
+          "parameters": [],
+          "variables": [
+            "entity",
+            "propertysetname"
+          ],
+          "description": "read time series. Use --help for more details"
+        }
+      ]
+    },
+    {
+      "basePath": "dataflowengine",
+      "alias": "dataflowengine",
+      "id": "dfe",
+      "description": "Data Flow Engine API",
+      "nested": [
+        {
+          "basePath": "/api/dataflowengine/v3/",
+          "version": "v3",
+          "id": "dfe",
+          "parameters": [],
+          "variables": [],
+          "description": "Default endpoint list. Use --help for more details"
+        },
+        {
+          "basePath": "/api/dataflowengine/v3/apps",
+          "version": "v3",
+          "id": "apps",
+          "parameters": [
+            "size",
+            "page",
+            "appTypeQuery"
+          ],
+          "variables": [],
+          "description": "Get the list registered apps. Use --help for more details"
+        },
+        {
+          "basePath": "/api/dataflowengine/v3/runtime/apps",
+          "version": "v3",
+          "id": "r-apps",
+          "parameters": [
+            "deploymentFilter",
+            "size",
+            "page"
+          ],
+          "variables": [],
+          "description": "Get the list of runtime apps. Use --help for more details"
+        },
+        {
+          "basePath": "/api/dataflowengine/v3/runtime/apps/{deploymentId}",
+          "version": "v3",
+          "id": "r-app",
+          "parameters": [],
+          "variables": [
+            "deploymentId"
+          ],
+          "description": "Get the specific app by name. Use --help for more details"
+        },
+        {
+          "basePath": "/api/dataflowengine/v3/runtime/apps/{deploymentId}/instances",
+          "version": "v3",
+          "id": "r-app-inst",
+          "parameters": [],
+          "variables": [
+            "deploymentId"
+          ],
+          "description": "Gets the specific app instances. Use --help for more details"
+        },
+        {
+          "basePath": "/api/dataflowengine/v3/streams/definitions",
+          "version": "v3",
+          "id": "def-streams",
+          "parameters": [
+            "size",
+            "page"
+          ],
+          "variables": [],
+          "description": "List stream definitions. Use --help for more details"
+        },
+        {
+          "basePath": "/api/dataflowengine/v3/streams/definitions/{streamName}",
+          "version": "v3",
+          "id": "def-stream",
+          "parameters": [],
+          "variables": [
+            "streamName"
+          ],
+          "description": "Query stream by stream name. Use --help for more details"
+        },
+        {
+          "basePath": "/api/dataflowengine/v3/streams/definitons/{streamName}/state",
+          "version": "v3",
+          "id": "def-stream-state",
+          "parameters": [],
+          "variables": [
+            "streamName"
+          ],
+          "description": "Get error status description of stream. Use --help for more details"
+        }
+      ]
+    },
+    {
+      "basePath": "notification",
+      "alias": "notification",
+      "id": "nfc",
+      "description": "Notification API",
+      "nested": [
+        {
+          "basePath": "/api/notification/v3/communicationcategories/",
+          "version": "v3",
+          "id": "cats",
+          "parameters": [],
+          "variables": [],
+          "description": "Get all communication categories. Use --help for more details"
+        },
+        {
+          "basePath": "/api/notification/v3/communicationcategories/{id}",
+          "version": "v3",
+          "id": "cat",
+          "parameters": [],
+          "variables": [
+            "id"
+          ],
+          "description": "Get communication category by category ID. Use --help for more details"
+        },
+        {
+          "basePath": "/api/notification/v3/communicationcategories/search/",
+          "version": "v3",
+          "id": "search",
+          "parameters": [],
+          "variables": [],
+          "description": "Listing CommunicationCategories with specific fields. Use --help for more details"
+        },
+        {
+          "basePath": "/api/notification/v3/communicationcategories/bouncedEmailIds",
+          "version": "v3",
+          "id": "mail-ids",
+          "parameters": [],
+          "variables": [],
+          "description": "Lists the blacklisted email addresses of the tenant, which were bounced by SES since they were invalid ones. Use --help for more details"
+        },
+        {
+          "basePath": "/api/notification/v3/recipient/addresstype",
+          "version": "v3",
+          "id": "address-type",
+          "parameters": [],
+          "variables": [],
+          "description": "Get all address types for the recipient. Use --help for more details"
+        },
+        {
+          "basePath": "/api/notification/v3/recipient/{id}",
+          "version": "v3",
+          "id": "rec",
+          "parameters": [],
+          "variables": [
+            "id"
+          ],
+          "description": "Get a recipient details based on the recipient ID. Use --help for more details"
+        },
+        {
+          "basePath": "/api/notification/v3/communicationchannel/",
+          "version": "v3",
+          "id": "channel",
+          "parameters": [],
+          "variables": [],
+          "description": "Use this api to get available communication types viz. EMAIL, SMS or PUSH. Use --help for more details"
+        },
+        {
+          "basePath": "/api/notification/v3/paramtype/",
+          "version": "v3",
+          "id": "paramtype",
+          "parameters": [],
+          "variables": [],
+          "description": "Use this api to get all available param types. Use --help for more details"
+        },
+        {
+          "basePath": "/api/notification/v3/template/templatecontent/{templateId}",
+          "version": "v3",
+          "id": "temp-content",
+          "parameters": [],
+          "variables": [
+            "templateId"
+          ],
+          "description": "Use this api to get template content for a requested template ID. Use --help for more details"
+        },
+        {
+          "basePath": "/api/notification/v3/template/templateidlist/{templatesetId}",
+          "version": "v3",
+          "id": "temp-id-list",
+          "parameters": [],
+          "variables": [
+            "templatesetId"
+          ],
+          "description": "Use this api to get list of template IDs for a requested template set. Use --help for more details"
+        },
+        {
+          "basePath": "/api/notification/v3/template/templatelistdetails",
+          "version": "v3",
+          "id": "temp-list-details",
+          "parameters": [],
+          "variables": [],
+          "description": "Use this api to get all template sets along with associated template details. Use --help for more details"
+        },
+        {
+          "basePath": "/api/notification/v3/template/templatesets",
+          "version": "v3",
+          "id": "temp-sets",
+          "parameters": [],
+          "variables": [],
+          "description": "Use this api to get list of templateSetObj's for matching template set name. Use --help for more details"
+        },
+        {
+          "basePath": "/api/notification/v3/template/templatesets/{templatesetId}",
+          "version": "v3",
+          "id": "temp-set",
+          "parameters": [],
+          "variables": [
+            "templatesetId"
+          ],
+          "description": "Use this api to get templateSetObj for a requested template set Id. Use --help for more details"
+        },
+        {
+          "basePath": "/api/notification/v3/templateparam/{templatesetId}",
+          "version": "v3",
+          "id": "temp-param",
+          "parameters": [],
+          "variables": [
+            "templatesetId"
+          ],
+          "description": "Use this api to get available template params for a requested template set id. Use --help for more details"
+        },
+        {
+          "basePath": "/api/notification/v3/certificatestore/",
+          "version": "v3",
+          "id": "cert-store",
+          "parameters": [],
+          "variables": [],
+          "description": "Get all email ids for a specific tenant user. Tenant information will be fetched from the User token while calling through Mindsphere Gateway. Use --help for more details"
+        },
+        {
+          "basePath": "/api/notification/v3/recipient/recipientgroup/{id}",
+          "version": "v3",
+          "id": "recipient-group",
+          "parameters": [],
+          "variables": [
+            "id"
+          ],
+          "description": "Get a recipient group. Use --help for more details"
+        }
+      ]
+    },
+    {
+      "basePath": "modelmanagement",
+      "alias": "modelmanagement",
+      "id": "mmg",
+      "description": "Model Management API",
+      "nested": [
+        {
+          "basePath": "/api/modelmanagement/v3/models",
+          "version": "v3",
+          "id": "models",
+          "parameters": [],
+          "variables": [],
+          "description": "Retrieves a list with all models and algorithms. Use --help for more details"
+        },
+        {
+          "basePath": "/api/modelmanagement/v3/models/{modelId}",
+          "version": "v3",
+          "id": "model",
+          "parameters": [],
+          "variables": [
+            "modelId"
+          ],
+          "description": "Retrieves the model's textual description plus its last version details. Use --help for more details"
+        },
+        {
+          "basePath": "/api/modelmanagement/v3/models/{modelId}/versions/last",
+          "version": "v3",
+          "id": "last-version",
+          "parameters": [],
+          "variables": [
+            "modelId"
+          ],
+          "description": "Downloads the last version payload or description of a model. Use --help for more details"
+        },
+        {
+          "basePath": "/api/modelmanagement/v3/models/{modelId}/versions",
+          "version": "v3",
+          "id": "model-version",
+          "parameters": [],
+          "variables": [
+            "modelId"
+          ],
+          "description": "Retrieves metadata of all versions of a model. Use --help for more details"
+        },
+        {
+          "basePath": "/api/modelmanagement/v3/models/{modelId}/versions/{versionId}",
+          "version": "v3",
+          "id": "model-version",
+          "parameters": [],
+          "variables": [
+            "modelId",
+            "versionId"
+          ],
+          "description": "Retrieves the version payload or the version metadata. Use --help for more details"
+        }
+      ]
+    },
+    {
+      "basePath": "dataexchange",
+      "alias": "dataexchange",
+      "id": "dex",
+      "description": "Data Exchange API",
+      "nested": [
+        {
+          "basePath": "/api/dataexchange/v3/files/{id}",
+          "version": "v3",
+          "id": "file",
+          "parameters": [],
+          "variables": [
+            "id"
+          ],
+          "description": "Performs a file download. Use --help for more details"
+        },
+        {
+          "basePath": "/api/dataexchange/v3/files/{id}/properties",
+          "version": "v3",
+          "id": "file-meta",
+          "parameters": [],
+          "variables": [
+            "id"
+          ],
+          "description": "Retrieves the file properties (metadata). Use --help for more details"
+        },
+        {
+          "basePath": "/api/dataexchange/v3/directories/{id}/properties",
+          "version": "v3",
+          "id": "dir-meta",
+          "parameters": [],
+          "variables": [
+            "id"
+          ],
+          "description": "Retreives updatable directory options, i.e the name and the  parentId. Use --help for more details"
+        },
+        {
+          "basePath": "/api/dataexchange/v3/directories/{id}",
+          "version": "v3",
+          "id": "dir",
+          "parameters": [],
+          "variables": [
+            "id"
+          ],
+          "description": "Performs a listing of all the accessible files and folders from current specified directory; recursive parameter can also be specified for this operation. Use --help for more details"
+        }
+      ]
+    },
+    {
+      "basePath": "identitymanagement",
+      "alias": "identitymanagement",
+      "id": "idm",
+      "description": "Identity Management API",
+      "nested": [
+        {
+          "basePath": "/api/identitymanagement/v3/Groups",
+          "version": "v3",
+          "id": "groups",
+          "parameters": [],
+          "variables": [],
+          "description": "List all the groups of a tenant. Use --help for more details"
+        },
+        {
+          "basePath": "/api/identitymanagement/v3/Groups/{groupId}",
+          "version": "v3",
+          "id": "group",
+          "parameters": [],
+          "variables": [
+            "groupId"
+          ],
+          "description": "Get group. Use --help for more details"
+        },
+        {
+          "basePath": "/api/identitymanagement/v3/Groups/{groupId}/members",
+          "version": "v3",
+          "id": "group-members",
+          "parameters": [],
+          "variables": [
+            "groupId"
+          ],
+          "description": "List members of a group. Use --help for more details"
+        },
+        {
+          "basePath": "/api/identitymanagement/v3/Users",
+          "version": "v3",
+          "id": "users",
+          "parameters": [],
+          "variables": [],
+          "description": "List of users of a tenant. Use --help for more details"
+        },
+        {
+          "basePath": "/api/identitymanagement/v3/Users/{userId}",
+          "version": "v3",
+          "id": "user",
+          "parameters": [],
+          "variables": [
+            "userId"
+          ],
+          "description": "Get user. Use --help for more details"
+        },
+        {
+          "basePath": "/api/identitymanagement/v3/Users/me",
+          "version": "v3",
+          "id": "me",
+          "parameters": [],
+          "variables": [],
+          "description": "Get list of groups starting with the prefix \"mdsp:\" in which the user is a member. Use --help for more details"
+        }
+      ]
+    },
+    {
+      "basePath": "anomalydetection",
+      "alias": "anomalydetection",
+      "id": "and",
+      "description": "Anomaly Detection API",
+      "nested": [
+        {
+          "basePath": "/api/anomalydetection/v3/models",
+          "version": "v3",
+          "id": "models",
+          "parameters": [],
+          "variables": [],
+          "description": "Get all models. Use --help for more details"
+        },
+        {
+          "basePath": "/api/anomalydetection/v3/models/{id}",
+          "version": "v3",
+          "id": "model",
+          "parameters": [],
+          "variables": [
+            "id"
+          ],
+          "description": "Get model. Use --help for more details"
+        }
+      ]
+    },
+    {
+      "basePath": "mindconnect",
+      "alias": "mindconnect",
+      "id": "mdc",
+      "description": "MindConnect API",
+      "nested": [
+        {
+          "basePath": "/api/mindconnect/v3/dataPointMappings",
+          "version": "v3",
+          "id": "mappings",
+          "parameters": [],
+          "variables": [],
+          "description": "Get mappings. Use --help for more details"
+        },
+        {
+          "basePath": "/api/mindconnect/v3/dataPointMappings/{id}",
+          "version": "v3",
+          "id": "mapping",
+          "parameters": [],
+          "variables": [
+            "id"
+          ],
+          "description": "Get a mapping by id. Use --help for more details"
+        },
+        {
+          "basePath": "/api/mindconnect/v3/diagnosticInformation",
+          "version": "v3",
+          "id": "dia-info",
+          "parameters": [],
+          "variables": [],
+          "description": "Get Diagnostic Information. Use --help for more details"
+        },
+        {
+          "basePath": "/api/mindconnect/v3/diagnosticActivations",
+          "version": "v3",
+          "id": "dia-activations",
+          "parameters": [],
+          "variables": [],
+          "description": "Get diagnostic activations. Use --help for more details"
+        },
+        {
+          "basePath": "/api/mindconnect/v3/diagnosticActivations/{id}",
+          "version": "v3",
+          "id": "dia-activation",
+          "parameters": [],
+          "variables": [
+            "id"
+          ],
+          "description": "Get a diagnostic activation. Use --help for more details"
+        }
+      ]
+    },
+    {
+      "basePath": "assetmanagement",
+      "alias": "assetmanagement",
+      "id": "asm",
+      "description": "Asset Management API",
+      "nested": [
+        {
+          "basePath": "/api/assetmanagement/v3/",
+          "version": "v3",
+          "id": "asm",
+          "parameters": [],
+          "variables": [],
+          "description": "List all links for available resources. Use --help for more details"
+        },
+        {
+          "basePath": "/api/assetmanagement/v3/assettypes",
+          "version": "v3",
+          "id": "asset-types",
+          "parameters": [
+            "page",
+            "size",
+            "sort",
+            "filter",
+            "ifNoneMatch",
+            "exploded"
+          ],
+          "variables": [],
+          "description": "List all asset types. Use --help for more details"
+        },
+        {
+          "basePath": "/api/assetmanagement/v3/assettypes/{id}",
+          "version": "v3",
+          "id": "asset-type",
+          "parameters": [
+            "ifNoneMatch",
+            "TypeId",
+            "exploded"
+          ],
+          "variables": [
+            "id"
+          ],
+          "description": "Read an asset type. Use --help for more details"
+        },
+        {
+          "basePath": "/api/assetmanagement/v3/aspecttypes",
+          "version": "v3",
+          "id": "aspect-types",
+          "parameters": [
+            "page",
+            "size",
+            "sort",
+            "filter",
+            "ifNoneMatch"
+          ],
+          "variables": [],
+          "description": "List all aspect types. Use --help for more details"
+        },
+        {
+          "basePath": "/api/assetmanagement/v3/aspecttypes/{id}",
+          "version": "v3",
+          "id": "aspect-type",
+          "parameters": [
+            "ifNoneMatch",
+            "TypeId"
+          ],
+          "variables": [
+            "id"
+          ],
+          "description": "Read an aspect type. Use --help for more details"
+        },
+        {
+          "basePath": "/api/assetmanagement/v3/assets",
+          "version": "v3",
+          "id": "assets",
+          "parameters": [
+            "page",
+            "size",
+            "sort",
+            "filter",
+            "ifNoneMatch"
+          ],
+          "variables": [],
+          "description": "List all available assets. Use --help for more details"
+        },
+        {
+          "basePath": "/api/assetmanagement/v3/assets/{id}",
+          "version": "v3",
+          "id": "asset",
+          "parameters": [
+            "UUID",
+            "ifNoneMatch"
+          ],
+          "variables": [
+            "id"
+          ],
+          "description": "Returns an asset. Use --help for more details"
+        },
+        {
+          "basePath": "/api/assetmanagement/v3/assets/{id}/variables",
+          "version": "v3",
+          "id": "asset-vars",
+          "parameters": [
+            "UUID",
+            "page",
+            "size",
+            "sort",
+            "filter",
+            "ifNoneMatch"
+          ],
+          "variables": [
+            "id"
+          ],
+          "description": "Get all variables of an asset. Use --help for more details"
+        },
+        {
+          "basePath": "/api/assetmanagement/v3/assets/{id}/aspects",
+          "version": "v3",
+          "id": "asset-aspects",
+          "parameters": [
+            "UUID",
+            "page",
+            "size",
+            "sort",
+            "filter",
+            "ifNoneMatch"
+          ],
+          "variables": [
+            "id"
+          ],
+          "description": "Get all aspects of an asset. Use --help for more details"
+        },
+        {
+          "basePath": "/api/assetmanagement/v3/assets/root",
+          "version": "v3",
+          "id": "assets-root",
+          "parameters": [
+            "ifNoneMatch"
+          ],
+          "variables": [],
+          "description": "Returns the root asset of the user. Use --help for more details"
+        },
+        {
+          "basePath": "/api/assetmanagement/v3/files",
+          "version": "v3",
+          "id": "meta-files",
+          "parameters": [
+            "page",
+            "size",
+            "sort",
+            "filter",
+            "ifNoneMatch"
+          ],
+          "variables": [],
+          "description": "Get metadata of uploaded files. Use --help for more details"
+        },
+        {
+          "basePath": "/api/assetmanagement/v3/files/{fileId}/file",
+          "version": "v3",
+          "id": "file",
+          "parameters": [],
+          "variables": [
+            "fileId"
+          ],
+          "description": "Returns a file by its id. Use --help for more details"
+        },
+        {
+          "basePath": "/api/assetmanagement/v3/files/{fileId}",
+          "version": "v3",
+          "id": "meta-file",
+          "parameters": [
+            "ifNoneMatch"
+          ],
+          "variables": [
+            "fileId"
+          ],
+          "description": "Returns a file's metadata by its id. Use --help for more details"
+        }
+      ]
+    },
+    {
+      "basePath": "tenantmanagement",
+      "alias": "tenantmanagement",
+      "id": "tnm",
+      "description": "Tenant Management API",
+      "nested": [
+        {
+          "basePath": "/api/tenantmanagement/v4/subtenants",
+          "version": "v4",
+          "id": "subtenants",
+          "parameters": [],
+          "variables": [],
+          "description": "Get subtenants. Use --help for more details"
+        },
+        {
+          "basePath": "/api/tenantmanagement/v4/subtenants/{id}",
+          "version": "v4",
+          "id": "subtenant",
+          "parameters": [],
+          "variables": [
+            "id"
+          ],
+          "description": "Get a subtenant by id. Use --help for more details"
+        },
+        {
+          "basePath": "/api/tenantmanagement/v4/legalConfigRegions",
+          "version": "v4",
+          "id": "legal-conf-regions",
+          "parameters": [],
+          "variables": [],
+          "description": "Get the complete legal information configuration of current tenant. Use --help for more details"
+        },
+        {
+          "basePath": "/api/tenantmanagement/v4/legalInfo",
+          "version": "v4",
+          "id": "legal-infos",
+          "parameters": [],
+          "variables": [],
+          "description": "Get specific legal information. Use --help for more details"
+        },
+        {
+          "basePath": "/api/tenantmanagement/v4/legalInfo/{tenantId}",
+          "version": "v4",
+          "id": "legal-info",
+          "parameters": [],
+          "variables": [
+            "tenantId"
+          ],
+          "description": "Get the region specific legal information for a given tenant with fallback logic to core tenant. Use --help for more details"
+        },
+        {
+          "basePath": "/api/tenantmanagement/v4/legalInfoForSpecificTenant/{tenantId}",
+          "version": "v4",
+          "id": "tenant-legal-info",
+          "parameters": [],
+          "variables": [
+            "tenantId"
+          ],
+          "description": "Get the region specific legal information for a given tenant without fallback logic. Use --help for more details"
+        },
+        {
+          "basePath": "/api/tenantmanagement/v4/tenantInfo",
+          "version": "v4",
+          "id": "tenant-info",
+          "parameters": [],
+          "variables": [],
+          "description": "Get tenant info. Use --help for more details"
+        }
+      ]
+    },
+    {
+      "basePath": "trendprediction",
+      "alias": "trendprediction",
+      "id": "trn",
+      "description": "Trend Prediction API",
+      "nested": [
+        {
+          "basePath": "/api/trendprediction/v3/models",
+          "version": "v3",
+          "id": "models",
+          "parameters": [],
+          "variables": [],
+          "description": "Retrieves all trained regression models for a given entity. Use --help for more details"
+        },
+        {
+          "basePath": "/api/trendprediction/v3/models/{id}",
+          "version": "v3",
+          "id": "model",
+          "parameters": [],
+          "variables": [
+            "id"
+          ],
+          "description": "Retrieves a regression model. Use --help for more details"
+        }
+      ]
+    },
+    {
+      "basePath": "eventmanagement",
+      "alias": "eventmanagement",
+      "id": "evn",
+      "description": "Event Management API",
+      "nested": [
+        {
+          "basePath": "/api/eventmanagement/v3/",
+          "version": "v3",
+          "id": "evn",
+          "parameters": [],
+          "variables": [],
+          "description": "Info about the API. Use --help for more details"
+        },
+        {
+          "basePath": "/api/eventmanagement/v3/events",
+          "version": "v3",
+          "id": "events",
+          "parameters": [
+            "size",
+            "page",
+            "eventFilter",
+            "eventSort",
+            "ifNoneMatch",
+            "eventHistory"
+          ],
+          "variables": [],
+          "description": "Query events. Use --help for more details"
+        },
+        {
+          "basePath": "/api/eventmanagement/v3/events/{eventId}",
+          "version": "v3",
+          "id": "event",
+          "parameters": [
+            "ifNoneMatch"
+          ],
+          "variables": [
+            "eventId"
+          ],
+          "description": "Get an event. Use --help for more details"
+        },
+        {
+          "basePath": "/api/eventmanagement/v3/eventTypes",
+          "version": "v3",
+          "id": "event-types",
+          "parameters": [
+            "size",
+            "page",
+            "eventTypeFilter",
+            "eventTypeSort",
+            "ifNoneMatch"
+          ],
+          "variables": [],
+          "description": "Query event types. Use --help for more details"
+        },
+        {
+          "basePath": "/api/eventmanagement/v3/eventTypes/{eventTypeId}",
+          "version": "v3",
+          "id": "event-type",
+          "parameters": [
+            "ifNoneMatch"
+          ],
+          "variables": [
+            "eventTypeId"
+          ],
+          "description": "Get an event type. Use --help for more details"
+        },
+        {
+          "basePath": "/api/eventmanagement/v3/deleteEventsJobs/{jobId}",
+          "version": "v3",
+          "id": "delete-event-job",
+          "parameters": [],
+          "variables": [
+            "jobId"
+          ],
+          "description": "Get a delete events job. Use --help for more details"
+        },
+        {
+          "basePath": "/api/eventmanagement/v3/createEventsJobs/{jobId}",
+          "version": "v3",
+          "id": "create-event-job",
+          "parameters": [],
+          "variables": [
+            "jobId"
+          ],
+          "description": "Get a create events job. Use --help for more details"
+        }
+      ]
+    }
+  ],
+  "Put": [
+    {
+      "basePath": "agentmanagement",
+      "alias": "agentmanagement",
+      "id": "agm",
+      "description": "Agent Management API",
+      "nested": [
+        {
+          "basePath": "/api/agentmanagement/v3/agents/{id}",
+          "version": "v3",
+          "id": "agent",
+          "parameters": [],
+          "variables": [
+            "id"
+          ],
+          "description": "Update agent. Use --help for more details"
+        },
+        {
+          "basePath": "/api/agentmanagement/v3/agents/{id}/dataSourceConfiguration",
+          "version": "v3",
+          "id": "data-source-config",
+          "parameters": [],
+          "variables": [
+            "id"
+          ],
+          "description": "Update Data Source Configuration. Use --help for more details"
+        },
+        {
+          "basePath": "/api/agentmanagement/v3/register/{client_id}",
+          "version": "v3",
+          "id": "register",
+          "parameters": [],
+          "variables": [
+            "client_id"
+          ],
+          "description": "Update client information. Use --help for more details"
+        }
+      ]
+    },
+    {
+      "basePath": "iottimeseries",
+      "alias": "iottimeseries",
+      "id": "iot",
+      "description": "IoT Time Series API",
+      "nested": [
+        {
+          "basePath": "/api/iottimeseries/v3/timeseries/{entity}/{propertysetname}",
+          "version": "v3",
+          "id": "ts",
+          "parameters": [],
+          "variables": [
+            "entity",
+            "propertysetname"
+          ],
+          "description": "write or update time series. Use --help for more details"
+        }
+      ]
+    },
+    {
+      "basePath": "notification",
+      "alias": "notification",
+      "id": "nfc",
+      "description": "Notification API",
+      "nested": [
+        {
+          "basePath": "/api/notification/v3/communicationcategories/{id}",
+          "version": "v3",
+          "id": "cat",
+          "parameters": [],
+          "variables": [
+            "id"
+          ],
+          "description": "Updating communication category. Use --help for more details"
+        },
+        {
+          "basePath": "/api/notification/v3/recipient/",
+          "version": "v3",
+          "id": "recipient",
+          "parameters": [],
+          "variables": [],
+          "description": "Update a recipient. Use --help for more details"
+        },
+        {
+          "basePath": "/api/notification/v3/template/{templatesetId}",
+          "version": "v3",
+          "id": "template",
+          "parameters": [],
+          "variables": [
+            "templatesetId"
+          ],
+          "description": "Use this api to update details of a template set. Use --help for more details"
+        },
+        {
+          "basePath": "/api/notification/v3/certificatestore/{emailid}",
+          "version": "v3",
+          "id": "cert-store",
+          "parameters": [],
+          "variables": [
+            "emailid"
+          ],
+          "description": "Update the recipient's public certificate for the specified email id. Use --help for more details"
+        },
+        {
+          "basePath": "/api/notification/v3/recipient/recipientgroup",
+          "version": "v3",
+          "id": "recipient-group",
+          "parameters": [],
+          "variables": [],
+          "description": "Update recipient group. Use --help for more details"
+        }
+      ]
+    },
+    {
+      "basePath": "dataexchange",
+      "alias": "dataexchange",
+      "id": "dex",
+      "description": "Data Exchange API",
+      "nested": [
+        {
+          "basePath": "/api/dataexchange/v3/files/{id}",
+          "version": "v3",
+          "id": "file",
+          "parameters": [],
+          "variables": [
+            "id"
+          ],
+          "description": "Allows users to update a file's contents. If the file does not already exists already, or permissions are not sufficient, an error is returned. Use --help for more details"
+        }
+      ]
+    },
+    {
+      "basePath": "identitymanagement",
+      "alias": "identitymanagement",
+      "id": "idm",
+      "description": "Identity Management API",
+      "nested": [
+        {
+          "basePath": "/api/identitymanagement/v3/Groups/{groupId}",
+          "version": "v3",
+          "id": "group",
+          "parameters": [],
+          "variables": [
+            "groupId"
+          ],
+          "description": "Update group. Use --help for more details"
+        },
+        {
+          "basePath": "/api/identitymanagement/v3/Users/{userId}",
+          "version": "v3",
+          "id": "user",
+          "parameters": [],
+          "variables": [
+            "userId"
+          ],
+          "description": "Update user. Use --help for more details"
+        }
+      ]
+    },
+    {
+      "basePath": "assetmanagement",
+      "alias": "assetmanagement",
+      "id": "asm",
+      "description": "Asset Management API",
+      "nested": [
+        {
+          "basePath": "/api/assetmanagement/v3/assettypes/{id}",
+          "version": "v3",
+          "id": "asset-type",
+          "parameters": [
+            "ifMatch",
+            "TypeId"
+          ],
+          "variables": [
+            "id"
+          ],
+          "description": "Create or Update an asset type. Use --help for more details"
+        },
+        {
+          "basePath": "/api/assetmanagement/v3/assettypes/{id}/fileAssignments/{key}",
+          "version": "v3",
+          "id": "asset-type-assign",
+          "parameters": [
+            "ifMatchMandatory",
+            "TypeId",
+            "fileKey"
+          ],
+          "variables": [
+            "id",
+            "key"
+          ],
+          "description": "Add a new file assignment to an asset type. Use --help for more details"
+        },
+        {
+          "basePath": "/api/assetmanagement/v3/aspecttypes/{id}",
+          "version": "v3",
+          "id": "aspect-type",
+          "parameters": [
+            "ifMatch",
+            "TypeId"
+          ],
+          "variables": [
+            "id"
+          ],
+          "description": "Create or Update an aspect type. Use --help for more details"
+        },
+        {
+          "basePath": "/api/assetmanagement/v3/assets/{id}",
+          "version": "v3",
+          "id": "asset",
+          "parameters": [
+            "ifMatchMandatory",
+            "UUID"
+          ],
+          "variables": [
+            "id"
+          ],
+          "description": "Update an asset. Use --help for more details"
+        },
+        {
+          "basePath": "/api/assetmanagement/v3/assets/{id}/fileAssignments/{key}",
+          "version": "v3",
+          "id": "asset-assign",
+          "parameters": [
+            "UUID",
+            "fileKey",
+            "ifMatchMandatory"
+          ],
+          "variables": [
+            "id",
+            "key"
+          ],
+          "description": "Save an file assignment to an asset. Use --help for more details"
+        },
+        {
+          "basePath": "/api/assetmanagement/v3/assets/{id}/location",
+          "version": "v3",
+          "id": "asset-location",
+          "parameters": [
+            "ifMatchMandatory",
+            "UUID"
+          ],
+          "variables": [
+            "id"
+          ],
+          "description": "Create or Update location assigned to given asset. Use --help for more details"
+        },
+        {
+          "basePath": "/api/assetmanagement/v3/files/{fileId}",
+          "version": "v3",
+          "id": "meta-file",
+          "parameters": [
+            "ifMatchMandatory"
+          ],
+          "variables": [
+            "fileId"
+          ],
+          "description": "Update a file. Use --help for more details"
+        }
+      ]
+    },
+    {
+      "basePath": "tenantmanagement",
+      "alias": "tenantmanagement",
+      "id": "tnm",
+      "description": "Tenant Management API",
+      "nested": [
+        {
+          "basePath": "/api/tenantmanagement/v4/subtenants/{id}",
+          "version": "v4",
+          "id": "subtenant",
+          "parameters": [],
+          "variables": [
+            "id"
+          ],
+          "description": "Update a subtenant by id. Use --help for more details"
+        },
+        {
+          "basePath": "/api/tenantmanagement/v4/legalConfigRegions/{regionId}",
+          "version": "v4",
+          "id": "legal-conf-region",
+          "parameters": [],
+          "variables": [
+            "regionId"
+          ],
+          "description": "Update a region configuration of current tenant. Use --help for more details"
+        }
+      ]
+    },
+    {
+      "basePath": "eventmanagement",
+      "alias": "eventmanagement",
+      "id": "evn",
+      "description": "Event Management API",
+      "nested": [
+        {
+          "basePath": "/api/eventmanagement/v3/events/{eventId}",
+          "version": "v3",
+          "id": "event",
+          "parameters": [
+            "event",
+            "ifMatch"
+          ],
+          "variables": [
+            "eventId"
+          ],
+          "description": "Update an event. Use --help for more details"
+        }
+      ]
+    }
+  ]
 }
